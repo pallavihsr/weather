@@ -6,10 +6,10 @@ const MyLineChart = (props) => {
   const temperatures =  props.data.map(day => day.temp.day);
   const chartState = {
     series: [
-      // {
-      //   name: 'series1',
-      //   data: [20,25,20,25,20,25,20,25,20,25,20,25,20],
-      // },
+      {
+        name: 'Last Month',
+        data: props.data2.map(day => day.temp.day),
+      },
       {
         name: 'This Month',
         data: props.data.map(day => day.temp.day),

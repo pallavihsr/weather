@@ -9,7 +9,6 @@ import RainyBlue from './assets/rainy-blue.svg';
 import PartialBlue from './assets/partial-blue.svg';
 import SunnyBlue from './assets/sunny-blue.svg';
 import weatherData from './result';
-import lastMonth from './result2';
 
 import cloudy from './assets/cloudy.svg';
 import rainy from './assets/rainy.svg';
@@ -25,7 +24,7 @@ function App() {
   const [long, setLong] = useState('-93.9268836');
   const [date, setDate] = useState('');
   const [data, setData] = useState(weatherData);
-  const [data2, setData2] = useState(lastMonth);
+  const [data2, setData2] = useState(weatherData);
 
   const weatherConditionMap = {
     Sunny: SunnyBlue,
@@ -37,20 +36,30 @@ function App() {
     Snow: RainyBlue,
   };
 
+  const weatherConditionMapWhite = {
+    Sunny: sunny,
+    Drizzle: rainy,
+    Clouds: cloudy,
+    Clear: sunny,
+    Thunderstorm: rainy,
+    Rain: rainy,
+    Snow: rainy,
+  };
+
   const fetchData = () => {
     const requestOptions = {
       method: "GET",
       redirect: "follow"
     };
 
-    fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${long}&appid=${process.env.REACT_APP_API_KEY}`, requestOptions)
+    fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${long}&units=metric&appid=${process.env.REACT_APP_API_KEY}`, requestOptions)
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => setData(JSON.parse(result)))
       .catch((error) => console.error(error));
   };
 
   useEffect(() => {
-    // fetchData();
+    fetchData();
     const currentDate = new Date();
 
     // Format the date using Intl.DateTimeFormat
@@ -119,7 +128,7 @@ function App() {
                 return (
                   <div className='text-white text-center weather-card active'>
                     <p className='mb-2'>{(new Date(hour.dt * 1000).getHours())}:00</p>
-                    <img src={cloudy} alt="Cloud Image" />
+                    <img src={weatherConditionMapWhite[hour.weather[0].main]} alt="Cloud Image" />
                     <p className='mt-2 mb-0'>{(hour.temp).toFixed()}</p>
                   </div>
                 )
@@ -127,7 +136,7 @@ function App() {
                 return (
                   <div className='text-white text-center weather-card'>
                     <p className='mb-2'>{(new Date(hour.dt * 1000).getHours())}:00</p>
-                    <img src={cloudy} alt="Cloud Image" />
+                    <img src={weatherConditionMapWhite[hour.weather[0].main]} alt="Cloud Image" />
                     <p className='mt-2 mb-0'>{(hour.temp).toFixed()}</p>
                   </div>
                 )
