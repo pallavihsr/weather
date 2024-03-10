@@ -1,0 +1,48 @@
+/* Navbar */
+
+.nav-button{
+    background-color: transparent;
+    border: 0;
+}
+
+.offcanvas{
+    width: 100% !important;
+}
+
+.main-menu{
+    background-image: url('../../assets/Bitmap.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.live-button{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    background:#FF2D55;
+    padding: 0.5rem 1rem; 
+    border-radius: .5rem;
+}
+
+.text-normal{
+    font-size: 12pzx;
+    font-weight: 700;
+}
+
+.location-button{
+    background: rgba(0,0,0,0.05);
+    width: 200px;
+    text-align: center;
+    height: 45px;
+    border-radius: 0.6rem;
+}
+
+.location-name{
+    font-size: 45px;
+    line-height: 60px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.45px;
+}
+

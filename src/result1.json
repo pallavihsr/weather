@@ -1,0 +1,30 @@
+{
+    "lat": 22.0281,
+    "lon": 88.0633,
+    "timezone": "Asia/Kolkata",
+    "timezone_offset": 19800,
+    "data": [
+        {
+            "dt": 1707330600,
+            "sunrise": 1707353011,
+            "sunset": 1707393620,
+            "temp": 295.05,
+            "feels_like": 295.28,
+            "pressure": 1016,
+            "humidity": 76,
+            "dew_point": 290.63,
+            "clouds": 0,
+            "wind_speed": 1.57,
+            "wind_deg": 106,
+            "wind_gust": 1.62,
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01n"
+                }
+            ]
+        }
+    ]
+}

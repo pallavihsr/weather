@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: "Abhaya Libre", serif !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-image{
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-image img{
+  height: 110px;
+  width: 130px;
+  border-radius: 1.3rem;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.home-live-button{
+  height: 22px;
+  width: 43px;
+  background: #FF2D55;
   color: white;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  border: 0;
+border-radius: 7px;
+text-transform: uppercase;
+position: absolute;
+bottom: 10px;
+right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.location-details h2{
+  color: #003339;
+  font-weight:bold;
+  font-size: 25px;
+  letter-spacing: 0.25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.date{
+  font-size: 15px;
+  font-weight: bold;
+  color: #96969A;
+  margin-top: 0;
+}
+
+.text-blue{
+  color: #057BFF;
+}
+
+.weather-short-info{
+  background: #003339;
+  padding:.5rem 1rem!important;
+  border-radius: 1rem;
+}
+
+.weather-card-container{
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.weather-card{
+  flex: 0 0 auto;
+  padding: .5rem 1rem;
+  text-align: center;
+  width: 75px;
+}
+
+.weather-card p{
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15.34px;
+}
+
+.weather-short-info .active{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.0001) 0%, rgba(255, 255, 255, 0.100169) 100%);
+  border-radius: 1rem;
+}
+
+.divider{
+  border-width: 1px;
+  border-color: red;
+}
+
+.additional-info h3{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.23px;
+  color: #003339;
+}
+
+.additional-info-card .unit{
+  font-size: 13px;
+  font-weight: 400;
+  color: #96969A;
+  line-height: 15.34px;
+}
+
+.additional-info-card .value{
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 17.7px;
+  color: #003339;
+}
+
+.temperature-heading h3{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.23px;
+  color: #003339;
+}
+
+.form-select{
+  width: 97px !important;
+  height: 35px;
+  border-radius: .5rem !important;
+  border: 1px solid #003339 !important;
+  font-size: 10px !important;
+  line-height: 11.8px !important;
+  font-weight: 700 !important;
+}
+
+#chart{
+  width: 100%;
+  overflow-x: scroll;
 }
